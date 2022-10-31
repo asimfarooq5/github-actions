@@ -1,0 +1,11 @@
+pydantic
+sqlalchemy[asyncio]
+aiosqlite
+autobahn[asyncio,serialization,encryption]
+uvloop
+flake8
+mypy
+black
+dotenv
+pytest
+pytest-asyncio

@@ -1,0 +1,5 @@
+pydantic
+sqlalchemy[asyncio]
+aiosqlite
+autobahn[asyncio,serialization,encryption]
+uvloop

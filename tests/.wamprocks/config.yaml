@@ -1,0 +1,42 @@
+version: '1'
+
+realms:
+  - name: realm1
+    roles:
+
+      - name: urn:simple-things:group:device_manager,urn:simple-things:user:device_registrar
+        permissions:
+          - uri: ""
+            match: prefix
+            allow_call: true
+            allow_publish: true
+            allow_register: true
+            allow_subscribe: true
+
+transports:
+  - type: websocket
+    port: 8080
+
+authenticators:
+  cryptosign:
+    - authid: john
+      realm: realm1
+      role: urn:simple-things:group:organization:4f297b98-3dcf-42c9-88c5-bde16bc1443f:user
+      authorized_keys:
+        - eac4a6cb83af967c93156aeb8f14bd50ada78812cba4be664e79e3f63a55d867
+
+    - authid: shahid
+      realm: realm1
+      role: urn:simple-things:group:device_manager,urn:simple-things:user:device_registrar
+      authorized_keys:
+        - eac4a6cb83af967c93156aeb8f14bd50ada78812cba4be664e79e3f63a55d867
+
+    - authid: john@thing.com
+      realm: realm1
+      role: anonymous
+      authorized_keys:
+        - eac4a6cb83af967c93156aeb8f14bd50ada78812cba4be664e79e3f63a55d867
+
+
+#Public Key: eac4a6cb83af967c93156aeb8f14bd50ada78812cba4be664e79e3f63a55d867
+#Private Key: 588b3f619db554e4c4d41d6c80f072266a311dc5f7bf55d8d42a0ced1d51fd47

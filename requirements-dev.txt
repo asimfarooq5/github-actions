@@ -6,6 +6,6 @@ uvloop
 flake8
 mypy
 black
-dotenv
+python-dotenv
 pytest
 pytest-asyncio

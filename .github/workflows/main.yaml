@@ -42,3 +42,10 @@ jobs:
 
       - name: Check black
         run: make black
+
+      - name: Run pytest
+        run: |
+          cd tests
+          make setup
+          make router
+          make pytest
